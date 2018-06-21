@@ -1,0 +1,15 @@
+Package: multiROC
+Title: Calculating and Visualizing ROC and PR Curves Across Multi-Class Classifications
+Version: 1.1.0
+Authors@R: c(person("Runmin", "Wei", role = c("aut", "cre"), email = "runmin@hawaii.edu"),  person("Jingye", "Wang", role = "aut", email = "jingyew@hawaii.edu"), person("Wei", "Jia", role = "ctb", email = "wjia@cc.hawaii.edu"))
+Description: Tools to solve real-world problems with multiple classes by computing the areas under ROC curve via micro-averaging and macro-averaging. The methodology is described in V. Van Asch (2013) <https://www.clips.uantwerpen.be/~vincent/pdf/microaverage.pdf> and Pedregosa et al. (2011) <http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html>.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: zoo, magrittr, boot, stats
+Suggests: dplyr, knitr, rmarkdown, ggplot2
+VignetteBuilder: knitr
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2018-06-14 00:00:00 HST
+RoxygenNote: 6.0.1.9000
