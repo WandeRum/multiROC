@@ -4,9 +4,9 @@ Calculating and Visualizing ROC and PR Curves Across Multi-Class Classifications
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![](https://www.r-pkg.org/badges/version/multiROC)](https://www.r-pkg.org/pkg/multiROC)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/multiROC)](https://www.r-pkg.org/pkg/multiROC)
-[![GitHub watchers](https://img.shields.io/github/watchers/elise-is/multiROC.svg?style=flat&label=Watch)](https://github.com/elise-is/multiROC/watchers)
-[![GitHub stars](https://img.shields.io/github/stars/elise-is/multiROC.svg?style=flat&label=Star)](https://github.com/elise-is/multiROC/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/elise-is/multiROC.svg?style=flat&label=Fork)](https://github.com/elise-is/multiROC/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/WandeRum/multiROC.svg?style=flat&label=Watch)](https://github.com/elise-is/multiROC/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/WandeRum/multiROC.svg?style=flat&label=Star)](https://github.com/elise-is/multiROC/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/WandeRum/multiROC.svg?style=flat&label=Fork)](https://github.com/elise-is/multiROC/fork)
 
 This package aims to fill the gap by enabling the calculation of multiclass ROC-AUC and multiclass PR-AUC with confidence intervals and the generation of publication-quality figures.
 
