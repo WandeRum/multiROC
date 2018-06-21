@@ -227,7 +227,7 @@ ggplot2::ggplot(plot_roc_df, ggplot2::aes(x = 1-Specificity, y=Sensitivity)) +
 ```
 
 ## 6 Bug Reports
-For sending comments, suggestions, bug reports of multiROC, please email to Runmin Wei (RWei AT cc DOT hawaii DOT edu) or report it via thus URL: https://github.com/elise-is/multiROC/issues
+For sending comments, suggestions, bug reports of multiROC, please email to Runmin Wei (RWei AT cc DOT hawaii DOT edu) or report it via thus URL: https://github.com/WandeRum/multiROC/issues
 
 ## 7 License
 GPL-3
