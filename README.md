@@ -19,7 +19,7 @@ You can install `multiROC` from GitHub:
 ```r
 install.packages('devtools')
 require(devtools)
-install_github("elise-is/multiROC")
+install_github("WandeRum/multiROC")
 require(multiROC)
 ```
 or from CRAN:
