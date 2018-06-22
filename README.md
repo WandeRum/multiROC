@@ -9,6 +9,7 @@ Calculating and Visualizing ROC and PR Curves Across Multi-Class Classifications
 [![GitHub forks](https://img.shields.io/github/forks/WandeRum/multiROC.svg?style=flat&label=Fork)](https://github.com/elise-is/multiROC/fork)
 
 The receiver operating characteristic (ROC) and precision recall (PR) is an extensively utilized method for comparing binary classifiers in various areas. However, many real-world problems are designed to multiple classes (e.g., tumor, node, and metastasis staging system of cancer), which require an evaluation strategy to assess multiclass classifiers. This package aims to fill the gap by enabling the calculation of multiclass ROC-AUC and PR-AUC with confidence intervals and the generation of publication-quality figures of multiclass ROC curves and PR curves.
+A user-friendly website is available at https://metabolomics.cc.hawaii.edu/software/multiROC/.
 
 ## 1 Citation
 Please cite our paper once it is published: (Submitted).
