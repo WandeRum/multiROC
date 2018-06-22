@@ -29,7 +29,85 @@ install.packages('multiROC')
 require(multiROC)
 ```
 
-## 3 Data preparation
+## 3 A demo example
+
+This demo is about the comparison between random forest and multinomial logistic regression based on Iris data.
+
+### 3.1 data preparation
+```r
+require(multiROC)
+data(iris)
+head(iris)
+```
+
+### 3.2 60% training data and 40% testing data
+```r
+set.seed(123456)
+total_number <- nrow(iris)
+train_idx <- sample(total_number, round(total_number*0.6))
+train_df <- iris[train_idx, ]
+test_df <- iris[-train_idx, ]
+```
+
+### 3.3 Random forest
+```r
+rf_res <- randomForest::randomForest(Species~., data = train_df, ntree = 100)
+rf_pred <- predict(rf_res, test_df, type = 'prob') 
+rf_pred <- data.frame(rf_pred)
+colnames(rf_pred) <- paste(colnames(rf_pred), "_pred_RF")
+```
+
+### 3.4 Multinomial logistic regression
+```r
+mn_res <- nnet::multinom(Species ~., data = train_df)
+mn_pred <- predict(mn_res, test_df, type = 'prob')
+mn_pred <- data.frame(mn_pred)
+colnames(mn_pred) <- paste(colnames(mn_pred), "_pred_MN")
+```
+
+### 3.5 Merge true labels and predicted values
+```r
+true_label <- dummies::dummy(test_df$Species)
+true_label <- data.frame(true_label)
+colnames(true_label) <- gsub(".*?\\.", "", colnames(true_label))
+colnames(true_label) <- paste(colnames(true_label), "_true")
+final_df <- cbind(true_label, rf_pred, mn_pred)
+```
+
+### 3.6 multiROC and multiPR
+```r
+roc_res <- multi_roc(final_df, force_diag=T)
+pr_res <- multi_pr(final_df, force_diag=T)
+```
+
+### 3.7 Plot
+```r
+plot_roc_df <- plot_roc_data(roc_res)
+plot_pr_df <- plot_pr_data(pr_res)
+
+ggplot2::ggplot(plot_roc_df, ggplot2::aes(x = 1-Specificity, y=Sensitivity)) +
+  ggplot2::geom_path(ggplot2::aes(color = Group, linetype=Method), size=1.5) +
+  ggplot2::geom_segment(ggplot2::aes(x = 0, y = 0, xend = 1, yend = 1), 
+                        colour='grey', linetype = 'dotdash') +
+  ggplot2::theme_bw() + 
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5), 
+                 legend.justification=c(1, 0), legend.position=c(.95, .05),
+                 legend.title=ggplot2::element_blank(), 
+                 legend.background = ggplot2::element_rect(fill=NULL, size=0.5, 
+                                                           linetype="solid", colour ="black"))
+
+ggplot2::ggplot(plot_pr_df, ggplot2::aes(x=Recall, y=Precision)) + 
+  ggplot2::geom_path(ggplot2::aes(color = Group, linetype=Method), size=1.5) + 
+  ggplot2::theme_bw() + 
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5), 
+                 legend.justification=c(1, 0), legend.position=c(.95, .05),
+                 legend.title=ggplot2::element_blank(), 
+                 legend.background = ggplot2::element_rect(fill=NULL, size=0.5, 
+                                                           linetype="solid", colour ="black"))
+```
+
+## 4 MultiROC in a nutshell
+
 ```r
 library(multiROC)
 data(test_data)
@@ -45,8 +123,6 @@ head(test_data)
     ## 6       1       0       0  0.6894488  0.2033285 0.10722271  0.1063048  0.4800507 0.41364450
 
 This example dataset contains two classifiers (m1, m2), and three groups (G1, G2, G3).
-
-## 4 MultiROC in a nutshell
 
 ### 4.1 multi_roc and multi_pr function
 ```{r}
