@@ -125,7 +125,7 @@ head(test_data)
 This example dataset contains two classifiers (m1, m2), and three groups (G1, G2, G3).
 
 ### 4.1 multi_roc and multi_pr function
-```{r}
+```r
 roc_res <- multi_roc(test_data, force_diag=T)
 pr_res <- multi_pr(test_data, force_diag=T)
 ```
@@ -165,7 +165,7 @@ Outputs of **multi_pr**:
 
 #### 4.2.1 List of AUC results
 
-```{r}
+```r
 unlist(roc_res$AUC)
 ```
 
@@ -187,7 +187,7 @@ This list shows the following AUC information:
 
 #### 4.2.2 Bootstrap
 
-```{r}
+```r
 roc_ci_res <- roc_ci(test_data, conf= 0.95, type='basic', R = 100, index = 4)
 pr_ci_res <- pr_ci(test_data, conf= 0.95, type='basic', R = 100, index = 4)
 ```
@@ -236,7 +236,7 @@ Here, we set index = 4 to calculate 95% CI of AUC of Macro in the classifier m1 
 
 #### 4.2.3 Output All Results
 
-```{r, message=FALSE, warning=FALSE}
+```r
 roc_auc_with_ci_res <- roc_auc_with_ci(test_data, conf= 0.95, type='bca', R = 100)
 roc_auc_with_ci_res
 pr_auc_with_ci_res <- pr_auc_with_ci(test_data, conf= 0.95, type='bca', R = 100)
@@ -283,7 +283,7 @@ Arguments of **roc_auc_with_ci** and **pr_auc_with_ci**:
 ## 5 Plots
 
 ### 5.1 change the format of AUC results to a ggplot2 friendly format.
-```{r}
+```r
 plot_roc_df <- plot_roc_data(roc_res)
 plot_pr_df <- plot_pr_data(pr_res)
 ```
