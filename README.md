@@ -106,7 +106,7 @@ ggplot2::ggplot(plot_pr_df, ggplot2::aes(x=Recall, y=Precision)) +
                                                            linetype="solid", colour ="black"))
 ```
 
-## 4 MultiROC in a nutshell
+## 4 multiROC in a nutshell
 
 ```r
 library(multiROC)
