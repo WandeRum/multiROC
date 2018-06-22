@@ -107,6 +107,8 @@ ggplot2::ggplot(plot_pr_df, ggplot2::aes(x=Recall, y=Precision)) +
                  legend.background = ggplot2::element_rect(fill=NULL, size=0.5, 
                                                            linetype="solid", colour ="black"))
 ```
+![](/www/demo_roc.jpeg)
+![](/www/demo_pr.jpeg)
 
 ## 4 multiROC in a nutshell
 
