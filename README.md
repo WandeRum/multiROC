@@ -2,7 +2,6 @@
 Calculating and Visualizing ROC and PR Curves Across Multi-Class Classifications
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Inline docs](http://inch-ci.org/github/WandeRum/multiROC.svg?branch=master)](http://inch-ci.org/github/WandeRum/multiROC)
 [![](https://www.r-pkg.org/badges/version/multiROC)](https://www.r-pkg.org/pkg/multiROC)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/multiROC)](https://www.r-pkg.org/pkg/multiROC)
 [![GitHub watchers](https://img.shields.io/github/watchers/WandeRum/multiROC.svg?style=flat&label=Watch)](https://github.com/elise-is/multiROC/watchers)
