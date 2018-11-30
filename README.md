@@ -1,4 +1,6 @@
-# multiROC
+multiROC <img src="multiROC_logo.jpeg" align="right"  height="254" width="220"/>
+======================================================
+
 Calculating and Visualizing ROC and PR Curves Across Multi-Class Classifications
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
