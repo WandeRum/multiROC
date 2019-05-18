@@ -73,7 +73,7 @@ colnames(mn_pred) <- paste(colnames(mn_pred), "_pred_MN")
 
 ### 3.5 Merge true labels and predicted values
 ```r
-true_label <- dummies::dummy(test_df$Species)
+true_label <- dummies::dummy(test_df$Species, sep = ".")
 true_label <- data.frame(true_label)
 colnames(true_label) <- gsub(".*?\\.", "", colnames(true_label))
 colnames(true_label) <- paste(colnames(true_label), "_true")
