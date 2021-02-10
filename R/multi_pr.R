@@ -40,7 +40,7 @@ multi_pr <- function(data, force_diag=TRUE) {
     all_rec <- res_rec[[i]] %>% unlist %>% unique %>% sort(decreasing=T)
     all_pre <- rep(0, length(all_rec))
     for (j in seq_along(group_names)) {
-      all_pre <- all_pre + approx(res_rec[[i]][[j]], res_pre[[i]][[j]], all_rec, yleft=1, yright=0)$y
+      all_pre <- all_pre + approx(res_rec[[i]][[j]], res_pre[[i]][[j]], all_rec, yleft=1, yright=0, ties = 'min')$y
     }
     all_pre <- all_pre/length(group_names)
     res_rec[[i]]$macro <- all_rec
