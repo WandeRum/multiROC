@@ -40,7 +40,7 @@ multi_roc <- function(data, force_diag=TRUE) {
     all_sp <- res_sp[[i]] %>% unlist %>% unique %>% sort(decreasing=TRUE)
     all_se <- rep(0, length(all_sp))
     for (j in seq_along(group_names)) {
-      all_se <- all_se + approx(res_sp[[i]][[j]], res_se[[i]][[j]], all_sp, yleft=1, yright=0)$y
+      all_se <- all_se + approx(res_sp[[i]][[j]], res_se[[i]][[j]], all_sp, yleft=1, yright=0, ties = 'min')$y
     }
     all_se <- all_se/length(group_names)
     res_sp[[i]]$macro <- all_sp
