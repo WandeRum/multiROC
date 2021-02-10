@@ -312,7 +312,7 @@ ggplot(plot_pr_df, aes(x=Recall, y=Precision)) + geom_path(aes(color = Group, li
 ```
 
 ## 6 Bug Reports
-For sending comments, suggestions, bug reports of multiROC, please email to Runmin Wei (runmin@hawaii.edu) or report it via thus URL: https://github.com/WandeRum/multiROC/issues
+For sending comments, suggestions, bug reports of multiROC, please email to Runmin Wei (wander1021@gmail.com) or report it via thus URL: https://github.com/WandeRum/multiROC/issues
 
 ## 7 License
 GPL-3
